@@ -14,7 +14,7 @@ export default function Login() {
                             <input type="password" placeholder="Password" className=" w-full border border-gray-300 rounded-md p-2 placeholder:text-gray-400 focus:outline-none focus:border-gray-500" />
                         </div>
                         <Link href="/" className=" text-right text-stone-400 my-2 underline">Forgot password?</Link>
-                        <button type="submit" className=" bg-gray-600 text-white rounded-md p-2 mt-5 hover:cursor-pointer hover:bg-gray-700 transition-colors duration-200">Login</button>
+                        <button type="submit" className=" bg-gray-600 text-white rounded-md p-2 mt-5 hover:cursor-pointer hover:bg-gray-700 transition-colors duration-200">Log in</button>
                     </form>
                     <div className=" flex items-center gap-2">
                         <hr className=" grow text-gray-200" />
@@ -22,7 +22,7 @@ export default function Login() {
                         <hr className=" grow text-gray-200" />
                     </div>
                     <button className=" w-full border border-gray-300 rounded-md p-2 hover:cursor-pointer hover:bg-gray-700 hover:text-white transition-colors duration-200">Login with Google</button>
-                    <Link href="/auth/signup" className=" block text-center text-stone-400 mt-5">Don't have an account? <span className=" underline">Sign up</span></Link>
+                    <Link href="/auth/signup" className=" block text-center text-stone-400 mt-5">Don't have an account? <span className=" underline text-gray-600">Sign up</span></Link>
                 </div>
             </aside>
         </div>
