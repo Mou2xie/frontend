@@ -1,5 +1,6 @@
 "use server";
 
+import { redirect } from "next/navigation";
 import { createClient } from "@/libs/supabase/server";
 
 export type ActionState = {
@@ -62,8 +63,6 @@ export async function signUp(prevState: ActionState | null, formData: FormData):
         };
     }
 
-    return {
-        success: true,
-        message: "Check your email for the confirmation link.",
-    };
+    redirect("/");
 }
+

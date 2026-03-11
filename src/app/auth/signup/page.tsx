@@ -19,12 +19,6 @@ export default function Signup() {
                         </div>
                     )}
 
-                    {state?.success && (
-                        <div className="mt-4 p-3 bg-green-50 border border-green-200 text-green-600 rounded-md text-sm">
-                            {state.message}
-                        </div>
-                    )}
-
                     <form action={formAction} className=" flex flex-col mt-5">
                         <div className=" space-y-3">
                             <div>
