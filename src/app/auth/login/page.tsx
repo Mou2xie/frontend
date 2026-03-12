@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import Link from "next/link";
-import { logIn } from "@/serverActions/login";
+import { logIn } from "@/serverActions/loginAction";
 
 export default function Login() {
     const [state, formAction, isPending] = useActionState(logIn, null);

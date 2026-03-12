@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import Link from "next/link";
-import { signUp } from "@/serverActions/signUp";
+import { signUp } from "@/serverActions/signupAction";
 
 export default function Signup() {
     const [state, formAction, isPending] = useActionState(signUp, null);
