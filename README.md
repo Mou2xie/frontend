@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Build My Agent
+
+An AI agent builder platform built with Next.js 16, React 19, and Supabase.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript 5 (strict mode)
+- **UI:** React 19, Tailwind CSS v4
+- **State:** Zustand v5
+- **Backend:** Supabase (Auth, Database, Storage)
+- **Icons:** lucide-react
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20+
+- npm
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Set up environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+Add your Supabase credentials to `.env.local`:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_key
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Next.js dev server (http://localhost:3000) |
+| `npm run build` | Production build |
+| `npm run start` | Serve production build |
+| `npx tsc --noEmit` | Type-check without emitting files |
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── (landingPage)/      # Landing page route group
+│   ├── auth/               # Auth pages (login, signup)
+│   ├── dashboard/          # Dashboard routes
+│   │   └── create-agent/   # Create agent flow
+│   ├── globals.css         # Tailwind CSS imports
+│   └── layout.tsx          # Root layout with auth sync
+├── components/             # Shared UI components
+│   ├── AuthState_Sync.tsx
+│   ├── Navbar_LandingPage.tsx
+│   └── Navbar_Dashboard.tsx
+├── libs/                   # Utility modules
+│   └── supabase/
+│       └── server.ts       # Server-side Supabase client
+├── serverActions/          # Next.js Server Actions
+│   ├── loginAction.ts
+│   └── signupAction.ts
+└── stores/                 # Zustand stores
+    └── useAuthStore.ts
+```
+
+## Features
+
+- **Authentication:** Email/password login and signup powered by Supabase Auth
+- **Dashboard:** Protected dashboard area for authenticated users
+- **Create Agent:** Multi-step agent creation flow
+- **State Management:** Global auth state synced between server and client
+- **Type Safety:** Full TypeScript support with strict mode enabled
+
+## Development Guidelines
+
+- Run `npx tsc --noEmit` before committing to catch type errors
+- Use `@/` path alias for imports within `src/`
+- Prefer Server Components; use `"use client"` only when necessary
+- Keep files under ~200 lines; split large components into smaller pieces
+- Follow the naming conventions documented in `AGENTS.md`
+
+## Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Your Supabase publishable key |
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Supabase Documentation](https://supabase.com/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Zustand Documentation](https://docs.pmnd.rs/zustand)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
