@@ -31,7 +31,7 @@ export default function EditLayout({
 
       <section className=" grow flex">
         <Sidebar_Edit />
-        <section className=" p-10">
+        <section className="grow p-10">
           {children}
         </section>
       </section>
