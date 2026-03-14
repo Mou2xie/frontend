@@ -10,7 +10,7 @@ const navItems = [
 ];
 
 // hightlight navtab is not done yet
-export function Navbar_LandingPage() {
+export function Topbar_LandingPage() {
     const pathname = usePathname();
     const { user, isLoading } = useAuthStore();
 

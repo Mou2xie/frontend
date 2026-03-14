@@ -3,7 +3,7 @@
 import { Settings } from "lucide-react";
 import { useAuthStore } from "@/stores/useAuthStore";
 
-export function Navbar_Dashboard() {
+export function Topbar_Dashboard() {
     const { user } = useAuthStore();
     return (
         <div className=" bg-gray-200 h-16 flex items-center justify-between px-20">
